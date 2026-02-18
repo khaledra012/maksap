@@ -1,0 +1,420 @@
+/* الألوان الأساسية */
+:root {
+    --primary-color: #1B4C74;
+    --cta-color: #449AD7; /* الأزرق الفاتح للزر كما في الصورة */
+    --hover-gold: #FFC647;
+    --secone-color:#1A3C61;
+}
+
+/* الهيدر */
+.navbar {
+    background-color: var(--primary-color) !important;
+    padding-top: 10px !important;    /* تقليل المسافة العلوية جداً */
+    padding-bottom: 2px !important; /* تقليل المسافة السفلية جداً */
+    margin-bottom: 0 !important;    /* إلغاء أي هامش سفلي */
+    min-height: 60px !important;    /* تحديد ارتفاع نحيف للهيدر */
+}
+/* مقاس اللوجو الجديد */
+.main-logo {
+    max-width: 172px;
+    width: 172px;
+    /* height: auto; */
+    object-fit: contain;
+    max-height: 70px
+}
+
+/* تنسيق الروابط */
+.navbar-nav .nav-link {
+    color: #ffffff !important;
+    margin: 0 12px;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+.dropdown-toggle::after {
+    display: none !important;
+}
+
+.navbar-nav .nav-link.active, 
+.navbar-nav .nav-link:hover {
+    color: var(--hover-gold) !important;
+}
+
+/* الزر (CTA) */
+.btn-cta {
+    background-color: var(--cta-color) !important;
+    color: white !important;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 600;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-cta:hover {
+    background-color: #357abd !important;
+    transform: translateY(-2px);
+}
+
+/* الـ Dropdown */
+.dropdown-menu {
+    text-align: right;
+    border-top: 3px solid var(--hover-gold);
+    border-radius: 0 0 8px 8px;
+}
+
+/* Hero Section Settings */
+/* Hero Section بدون شفافية ومع اللون الأساسي */
+/* تقليل المسافات في الـ Hero Section */
+.hero-section {
+    background-color: var(--primary-color);
+    /* قللنا الـ padding من فوق (Top) ليكون 40px بدلاً من 100px */
+    padding: 0 0 80px 0; 
+    min-height: auto; /* بدل 80vh عشان السكشن مياخدش طول الشاشة كله لو المحتوى قليل */
+    display: flex;
+    align-items: center;
+}
+
+/* إلغاء أي هوامش افتراضية في اللوجو أو العناوين داخل الـ Hero */
+.hero-logo {
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+}
+
+.hero-section h1 {
+    margin-top: 0 !important;
+}
+
+/* Services Section */
+.services-section {
+    background-color: var(--primary-color);
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+    height: 3px;
+    background-color: var(--hover-gold);
+}
+
+/* Service Cards */
+.service-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px 25px;
+    color: white;
+    height: 100%;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    background: rgba(68, 154, 215, 0.2);
+    border-color: var(--secondary-color);
+}
+
+.service-card h4 {
+    color: var(--hover-gold);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.service-card .card-icon img {
+    max-width: 120px;
+    height: auto;
+}
+
+/* Active Card (Like the middle one in image) */
+.active-card {
+    border: 2px solid var(--secondary-color);
+    background: rgba(68, 154, 215, 0.1);
+}
+
+.p-hero{
+    padding-top: 15px;
+    line-height: 2.0;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    z-index: 1000;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+
+/*  */
+/* السكشن بالكامل */
+/* تنسيق السكشن العام */
+/* جميع التنسيقات محصورة داخل السكشن فقط */
+#unique-creative-section {
+    background-color: var(--secone-color);
+    font-family: 'Cairo', sans-serif;
+    color: #fff;
+}
+
+/* العنوان */
+#unique-creative-section .creative-main-title {
+    color: #FDC057;
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 0;
+}
+
+/* الكارد (الصندوق) */
+#unique-creative-section .creative-card {
+    background: linear-gradient(135deg, #2b5682 0%, #3e7ab5 100%);
+    border-radius: 15px;
+    padding: 2rem;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* نصوص داخل الكارد */
+#unique-creative-section .creative-card h3 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+#unique-creative-section .creative-card ul {
+    list-style: none; /* إلغاء التنقيط الافتراضي */
+    padding: 0;
+    margin: 1rem 0 0 0;
+}
+
+#unique-creative-section .creative-card ul li {
+    position: relative;
+    padding-right: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #e0e0e0;
+    font-size: 1.1rem;
+}
+
+/* النقطة الصفراء الخاصة فقط بهذا السكشن */
+#unique-creative-section .creative-card ul li::before {
+    content: '•';
+    color: #FDC057;
+    font-size: 1.5rem;
+    position: absolute;
+    right: 0;
+    top: -5px;
+}
+
+/* الأزرار */
+#unique-creative-section .creative-btn {
+    background-color: #5587a8;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    width: 100%;
+    transition: 0.3s;
+}
+
+#unique-creative-section .creative-btn:hover {
+    background-color: #6ea0c2;
+}
+
+#unique-creative-section .creative-btn.active {
+    background-color: #FDC057;
+    color: #1A3C61;
+    font-weight: bold;
+    transform: scale(1.05);
+}
+
+/* الأنيميشن للصورة */
+#unique-creative-section .creative-float-anim {
+    animation: creativeFloat 6s ease-in-out infinite;
+}
+
+@keyframes creativeFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* تأثير الظهور والاختفاء للنص */
+#unique-creative-section .creative-fade-box {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+#unique-creative-section .creative-fade-box.visible {
+    opacity: 1;
+}
+
+/* موبايل */
+@media (max-width: 991px) {
+    #unique-creative-section .creative-nav-buttons {
+        flex-direction: row !important;
+    }
+}
+/* =========================================
+   تنسيقات الجزء الجديد (حدد مسارك)
+   ========================================= */
+
+/* خط فاصل خفيف فوق الجزء الجديد (اختياري) */
+#unique-creative-section .border-top-custom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* عنوان الجزء الجديد */
+#unique-creative-section .path-title {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* تلوين كلمة "مكسب" باللون الأصفر */
+#unique-creative-section .highlight-gold {
+    color: #FDC057;
+    position: relative;
+    display: inline-block;
+}
+
+/* زخرفة بسيطة تحت كلمة مكسب (اختياري) */
+#unique-creative-section .highlight-gold::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #FDC057;
+    bottom: 5px;
+    left: 0;
+    opacity: 0.3;
+    border-radius: 2px;
+}
+
+/* تنسيق الفقرة النصية */
+#unique-creative-section .path-desc {
+    color: #e0e0e0;       /* لون أبيض مائل للرمادي لراحة العين */
+    font-size: 1.25rem;   /* حجم خط مقروء */
+    line-height: 1.8;     /* تباعد أسطر مريح */
+    font-weight: 400;
+    max-width: 900px;     /* عشان النص ميمطش بعرض الشاشة كلها */
+    margin: 0 auto;       /* توسيط البلوك */
+}
+
+/* تحسين للموبايل للجزء الجديد */
+@media (max-width: 768px) {
+    #unique-creative-section .path-title {
+        font-size: 1.8rem;
+    }
+    #unique-creative-section .path-desc {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+}
+
+/* =========================================
+   تنسيقات سكشن الإحصائيات (معزول)
+   ========================================= */
+
+#stats-section {
+    background-color: var(--primary-color); /* نفس لون السكشن السابق لدمجهم بصرياً */
+    font-family: 'Cairo', sans-serif;
+    position: relative;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+}
+
+/* --- النصوص --- */
+#stats-section .stats-title {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 2.2rem;
+}
+
+#stats-section .highlight-gold {
+    color: #FDC057;
+}
+
+#stats-section .stats-desc {
+    color: #e0e0e0;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* --- صورة التابلت --- */
+#stats-section .floating-tablet {
+    max-width: 50%; /* تحكم في حجم الصورة */
+    height: auto;
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.4)); /* ظل قوي للواقعية */
+    animation: tabletFloat 5s ease-in-out infinite;
+}
+
+@keyframes tabletFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* --- كروت الإحصائيات --- */
+#stats-section .stat-card {
+    background: linear-gradient(180deg, #2b5682 0%, #1A3C61 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 2rem 1rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+#stats-section .stat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    border-color: #FDC057; /* إطار أصفر عند الهوفر */
+}
+
+#stats-section .counter-value {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    font-family: sans-serif; /* الأرقام تكون أوضح بخط إنجليزي أو sans */
+}
+
+#stats-section .stat-label {
+    color: #FDC057; /* اللون الذهبي للنصوص تحت الأرقام */
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* تنسيق للموبايل */
+@media (max-width: 768px) {
+    #stats-section .stats-title { font-size: 1.8rem; }
+    #stats-section .counter-value { font-size: 2.2rem; }
+    #stats-section .floating-tablet { max-width: 100%; }
+}
