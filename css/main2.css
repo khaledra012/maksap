@@ -1,0 +1,411 @@
+/* ==============================================
+   تنسيقات الهيرو الموحد 
+============================================== */
+.hero-unified-section {
+    position: relative;
+    padding: 150px 0 100px; /* مساحات واسعة */
+    overflow: hidden;
+    direction: rtl;
+}
+
+.relative-z { position: relative; z-index: 2; }
+.text-gold { color: var(--hover-gold) !important; }
+
+/* العناوين والنصوص */
+.unified-hero-title {
+    font-size: 3.2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.unified-hero-desc {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    max-width: 900px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.unified-hero-gold {
+    font-size: 1.15rem;
+    max-width: 850px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* الفرشاة الصفراء */
+.yellow-brush-line {
+    display: block;
+    width: 280px;
+    height: 12px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10' preserveAspectRatio='none'%3E%3Cpath d='M0,5 Q50,0 100,5 Q50,10 0,5 Z' fill='%23ffc107'/%3E%3C/svg%3E") no-repeat center;
+    background-size: 100% 100%;
+    margin: 10px auto 0;
+}
+
+/* ==============================================
+   الزرار الجديد (شكل الكبسولة) 
+============================================== */
+.btn-pill-blue {
+    background-color: #007bff; /* الأزرق الفاتح الزاهي */
+    color: #ffffff !important;
+    padding: 12px 40px;
+    border-radius: 50px; /* السر هنا: بيخلي الحواف دائرية بالكامل */
+    font-weight: 800;
+    font-size: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+}
+
+.btn-pill-blue:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px); /* نطة خفيفة للأعلى */
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.6);
+}
+
+.btn-pill-blue i {
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+/* حركة السهم لليسار عند الهوفر */
+.btn-pill-blue:hover i {
+    transform: translateX(-5px); 
+}
+
+/* ==============================================
+   أنيميشن الخلفية (الدوائر العائمة)
+============================================== */
+.floating-bg-elements {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1;
+    pointer-events: none; 
+}
+
+.tech-icon-circle {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.03); /* لون خلفية الدائرة شفاف جداً */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.1); /* لون الأيقونة باهت */
+    animation: gentleFloat infinite alternate ease-in-out;
+}
+
+.icon-pos-1 { top: 15%; right: 15%; animation-duration: 6s; }
+.icon-pos-2 { bottom: 20%; right: 10%; animation-duration: 8s; font-size: 35px; }
+.icon-pos-3 { top: 25%; left: 12%; animation-duration: 7s; }
+.icon-pos-4 { bottom: 25%; left: 18%; animation-duration: 9s; }
+
+@keyframes gentleFloat {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-25px) rotate(15deg); }
+}
+
+/* الموبايل */
+@media (max-width: 768px) {
+    .unified-hero-title { font-size: 2.2rem; }
+    .tech-icon-circle { width: 50px; height: 50px; font-size: 20px; }
+    .hero-unified-section { padding: 100px 0 60px; }
+}
+
+/* --- تنسيق الكروت المربعة الجديدة --- */
+.square-hover-card {
+    background-color: rgba(255, 255, 255, 0.05); /* خلفية شفافة قليلاً */
+    border: 2px solid rgba(255, 255, 255, 0.1); /* حدود باهتة في البداية */
+    border-radius: 20px; /* حواف دائرية مثل الصورة */
+    padding: 40px 25px;
+    text-align: center;
+    height: 100%;
+    transition: all 0.4s ease; /* انتقال ناعم للتأثيرات */
+}
+
+/* --- تأثير الهوفر المطلوب --- */
+.square-hover-card:hover {
+    border-color: var(--hover-gold); /* الحواف تصبح صفراء */
+    transform: translateY(-10px); /* الكارت يطلع لفوق سنة */
+    background-color: rgba(255, 255, 255, 0.08); /* تفتيح الخلفية قليلاً */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* إضافة ظل للعمق */
+}
+
+/* --- تنسيق دائرة الأيقونة الصفراء --- */
+.card-icon-circle {
+    width: 80px;
+    height: 80px;
+    background-color: var(--hover-gold); /* الخلفية الصفراء */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* توسيط الدائرة */
+    font-size: 2rem;
+    color: var(--primary-color); /* لون الأيقونة (أزرق غامق) */
+}
+
+/* --- تنسيق النصوص داخل الكارت --- */
+.square-hover-card h4 {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.square-hover-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+/* ==============================================
+   كروت خطوات العمل (ستايل السوشيال ميديا)
+============================================== */
+
+/* تصميم الكارت الأساسي */
+.social-style-card {
+    background-color: rgba(255, 255, 255, 0.04); /* لون خلفية الكارت أفتح قليلاً من السكشن */
+    border-right: 4px solid var(--hover-gold); /* الخط الأصفر الثابت على اليمين */
+    border-radius: 12px;
+    padding: 35px 25px;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    transition: box-shadow 0.3s ease; /* انتقال ناعم للشادو فقط */
+    cursor: default; /* مؤشر عادي لأنها للقراءة */
+}
+
+/* تأثير الهوفر: ظل أسود خفيف كما طلبت */
+.social-style-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); 
+}
+
+/* الرقم الكبير الباهت في الخلفية */
+.step-bg-number {
+    position: absolute;
+    top: 20px;
+    left: 20px; /* مكان الرقم على اليسار زي الصورة */
+    font-size: 2.0rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.05); /* أبيض باهت جداً */
+    line-height: 1;
+    z-index: 0;
+    font-family: Arial, sans-serif; /* لضمان شكل الرقم الواضح */
+}
+
+/* تنسيق العناوين والنصوص داخل الكارت */
+.social-style-card h4 {
+    color: var(--hover-gold); /* العنوان باللون الأصفر */
+    font-weight: 700;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1; /* عشان يفضل فوق الرقم الباهت */
+}
+
+.social-style-card p {
+    color: #ffffff; /* النص أبيض */
+    font-size: 1rem;
+    line-height: 1.8;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* ==============================================
+   تنسيقات الخط الزمني (Timeline)
+============================================== */
+
+/* حاوية الخط الزمني والخط الرأسي الباهت */
+.strategic-timeline-v2 {
+    position: relative;
+    padding-right: 40px; /* مسافة بين النص والخط عشان اللغة العربية (RTL) */
+    border-right: 2px solid rgba(255, 193, 7, 0.2); /* الخط الجانبي */
+    margin-right: 20px;
+}
+
+/* كل عنصر (خدمة) داخل الخط */
+.timeline-node {
+    position: relative;
+    margin-bottom: 45px;
+    transition: all 0.3s ease;
+}
+
+/* إزالة المسافة السفلية من آخر عنصر */
+.timeline-node:last-child {
+    margin-bottom: 0;
+}
+
+/* النقطة الذهبية المضيئة */
+.node-glow-dot {
+    position: absolute;
+    right: -49px; /* لتقع بالضبط فوق الخط الرأسي */
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    background-color: var(--hover-gold); /* لون النقطة */
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.8); /* التوهج (Glow) حول النقطة */
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+/* تنسيق النصوص */
+.timeline-node h4 {
+    color: var(--hover-gold); /* العنوان ذهبي */
+    margin-bottom: 12px;
+}
+
+.timeline-node p {
+    color: rgba(255, 255, 255, 0.7); /* النص أبيض باهت مريح للعين */
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin-bottom: 0;
+}
+
+/* تأثير الـ Hover (يخلي النقطة تنور أكتر والنص يوضح) */
+.timeline-node:hover .node-glow-dot {
+    transform: scale(1.3);
+    box-shadow: 0 0 25px rgba(255, 193, 7, 1);
+}
+
+.timeline-node:hover p {
+    color: rgba(255, 255, 255, 1);
+}
+
+/* ==============================================
+   تنسيق الصورة الجانبية 
+============================================== */
+.timeline-image-wrapper {
+    position: relative;
+    display: inline-block;
+}
+/* تعريف حركة الطفو صعوداً وهبوطاً */
+@keyframes floatUpDn {
+    0% {
+        transform: translateY(0px); /* الموضع الأصلي */
+    }
+    100% {
+        transform: translateY(-20px); /* التحرك للأعلى بمقدار 20 بكسل */
+    }
+}
+
+/* تعريف حركة الطفو صعوداً وهبوطاً */
+/* تعريف حركة الطفو بطريقة تضمن التكرار السلس */
+@keyframes moveUpDown {
+    0%, 100% { 
+        transform: translateY(0); 
+    }
+    50% { 
+        transform: translateY(-20px); 
+    }
+}
+
+/* تطبيق الحركة الإجبارية على الصورة */
+.floating-img {
+    animation: moveUpDown 4s ease-in-out infinite !important;
+    display: block; /* لضمان حرية الحركة */
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+.glow-backdrop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(255, 193, 7, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+    filter: blur(20px);
+}
+
+.floating-img {
+    position: relative;
+    z-index: 1;
+    animation: floatAnim 4s ease-in-out infinite alternate;
+}
+
+/* تجاوب مع شاشات الموبايل */
+@media (max-width: 991px) {
+    .strategic-timeline-v2 {
+        border-right: 2px solid rgba(255, 193, 7, 0.3);
+        margin-right: 10px;
+        padding-right: 30px;
+    }
+    .node-glow-dot {
+        right: -39px;
+    }
+}
+/* ==============================================
+   تنسيقات سكشن فوائد الأشرطة الزرقاء
+============================================== */
+
+/* تنسيق الشريط الأزرق الفاتح (البار) */
+/* تنسيق الشريط الأزرق الفاتح (البار) الأساسي */
+.benefit-blue-bar {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.08); 
+    padding: 18px 30px;
+    border-radius: 12px; 
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    /* السر هنا: بنعمل خط يمين شفاف في البداية عشان الكارت ميتحركش لما لونه يتغير */
+    border-right: 4px solid transparent; 
+}
+
+/* تأثير الهوفر: اصفرار من الجنب اليمين بس */
+.benefit-blue-bar:hover {
+    background-color: rgba(255, 255, 255, 0.12); /* تفتيح الخلفية درجة بسيطة */
+    border-right-color: var(--hover-gold); /* الخط اليمين بس اللي بينور أصفر */
+    transform: translateX(-8px); /* حركة خفيفة لليسار عشان تبرز الخط اليمين */
+}
+
+/* علامة الصح الذهبية على اليمين */
+.benefit-blue-bar i {
+    color: var(--hover-gold) !important; 
+    font-size: 1.3rem;
+    margin-left: 20px; 
+}
+
+/* النص داخل الشريط */
+.benefit-blue-bar p {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+/* ==============================================
+   تنسيق الزر الأصفر 
+============================================== */
+.btn-yellow-solid {
+    background-color: #ffc107; /* لون أصفر ناصع */
+    color: #0d2335 !important; /* نص أزرق داكن لتباين ممتاز */
+    padding: 12px 45px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 1.15rem;
+    display: inline-block;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+}
+
+.btn-yellow-solid:hover {
+    background-color: #e0a800;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 193, 7, 0.5);
+}
+
+/* كلاسات مساعدة للنصوص */
+.max-w-800 { max-width: 800px; }
+.max-w-900 { max-width: 900px; }
+.leading-relaxed { line-height: 1.8; }

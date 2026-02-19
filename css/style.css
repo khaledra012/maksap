@@ -530,3 +530,909 @@ p, span, a {
     background: var(--hover-gold) !important;
     opacity: 1;
 }
+/* استبدل الكلاس باسم الكلاس اللي عندك للأيقونة أو الرابط */
+.whatsapp-float {
+    text-decoration: none !important; /* هذا السطر يشيل أي شرطة تحت الأيقونة */
+    border-bottom: none !important;  /* احتياطاً لو في برواز سفلي */
+    outline: none !important;
+}
+
+/* صفحه الخدمات */
+
+/* تنسيق السكشن العام */
+/* الحاوية الأساسية للسكشن */
+/* الحاوية الأساسية للسكشن */
+.service-hero-section {
+    position: relative;
+    /* مسحنا التدرج وحطينا المتغير بتاعك مباشرة */
+    background-color: var(--primary-color); 
+    padding: 120px 0 100px; 
+    overflow: hidden;
+    color: #ffffff;
+}
+
+/* خلفية تكنولوجية خفيفة جداً */
+.tech-overlay-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    /* تقدر تحط صورة الشاشات اللي في الخلفية هنا إذا حبيت */
+    background: url('../images/tech-bg.png') center/cover no-repeat;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.relative-z {
+    position: relative;
+    z-index: 2;
+}
+
+/* تنسيق العنوان */
+.hero-main-title {
+    font-size: 3rem;
+    font-weight: 800;
+    font-family: 'Cairo', sans-serif;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* حركة الفرشاة الصفراء تحت العنوان */
+.yellow-brush {
+    display: block;
+    width: 250px;
+    height: 18px;
+    /* رسمة الفرشاة بالـ SVG لتبدو احترافية */
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10' preserveAspectRatio='none'%3E%3Cpath d='M0,5 Q50,0 100,5 Q50,10 0,5 Z' fill='%23ffc107'/%3E%3C/svg%3E") no-repeat center;
+    background-size: 100% 100%;
+    margin: 5px auto 0;
+}
+
+/* تنسيق النصوص الوصفية */
+.hero-description {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* زر أكتشف المزيد */
+.btn-discover {
+    background-color: #2980b9; 
+    color: #ffffff;
+    padding: 12px 35px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.btn-discover:hover {
+    background-color: #1a6294;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.btn-discover i {
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.btn-discover:hover i {
+    transform: translateX(-5px);
+}
+
+/* تجاوب السكشن مع الموبايل */
+@media (max-width: 768px) {
+    .hero-main-title { font-size: 2rem; }
+    .hero-description { font-size: 1rem; }
+    .yellow-brush { width: 180px; }
+    .service-hero-section { padding: 80px 0; }
+}
+/* حاوية الأشكال عشان متخرجش برا السكشن */
+.animated-bg-shapes {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    overflow: hidden;
+    z-index: 0; /* عشان تفضل ورا الكلام */
+    pointer-events: none; /* عشان متمنعش الضغط على الزراير */
+}
+
+/* التنسيق الأساسي للكرات المضيئة */
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px); /* درجة التمويه عشان تبان كأنها إضاءة مش شكل صلب */
+    opacity: 0.5; /* شفافية خفيفة */
+    animation: floatShape infinite alternate ease-in-out;
+}
+
+/* الكرة الأولى: أزرق فاتح (فوق على اليمين) */
+.shape-1 {
+    width: 350px; 
+    height: 350px;
+    background: #2980b9; 
+    top: -15%; 
+    right: -10%;
+    animation-duration: 12s; /* بتتحرك ببطء على مدار 12 ثانية */
+}
+
+/* الكرة الثانية: اللون الذهبي بتاع مكسب (تحت على الشمال) */
+.shape-2 {
+    width: 300px; 
+    height: 300px;
+    background: var(--hover-gold); 
+    bottom: -20%; 
+    left: -10%;
+    opacity: 0.3; /* خلينا الذهبي أهدى شوية */
+    animation-duration: 15s;
+    animation-delay: 2s; /* تبدأ متأخرة شوية عشان الحركة تبان عشوائية */
+}
+
+/* الكرة الثالثة: أزرق متوسط (في النص) */
+.shape-3 {
+    width: 250px; 
+    height: 250px;
+    background: #3498db; 
+    top: 40%; 
+    left: 40%;
+    opacity: 0.2;
+    animation-duration: 18s;
+}
+
+/* كود حركة الطفو (بتكبر وتصغر وتتحرك من مكانها بشكل ناعم) */
+@keyframes floatShape {
+    0% { 
+        transform: translate(0, 0) scale(1); 
+    }
+    100% { 
+        transform: translate(50px, -50px) scale(1.2); 
+    }
+}
+
+/* تنسيق السكشن العام */
+.services-details-section {
+    background-color: var(--secone-color);
+    color: #fff;
+    overflow: hidden;
+}
+
+/* مسافة كبيرة بين كل خدمة والتانية */
+.service-row {
+    margin-bottom: 120px;
+}
+
+.service-row:last-child {
+    margin-bottom: 0;
+}
+
+/* تنسيق النصوص */
+.service-text-content {
+    padding: 0 20px;
+}
+
+.service-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.service-title span {
+    color: var(--hover-gold);
+    position: relative;
+}
+
+/* خط تجميلي تحت الكلمة الذهبية */
+.service-title span::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    width: 50%;
+    height: 3px;
+    background: var(--hover-gold);
+    border-radius: 2px;
+}
+
+.service-desc {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 30px;
+}
+
+/* تنسيق القوائم (المميزات) */
+.list-title {
+    color: var(--hover-gold);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.service-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-features-list li {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.6;
+}
+
+.service-features-list li i {
+    color: var(--hover-gold);
+    font-size: 1.2rem;
+    margin-left: 10px; /* المسافة بين الأيقونة والنص */
+    margin-top: 4px;
+}
+
+/* =========================================
+   تنسيق الصور والأنيميشن (الطفو والإضاءة)
+   ========================================= */
+.illustration-box {
+    position: relative;
+    text-align: center;
+    padding: 20px;
+}
+
+.glow-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 60%;
+    background: rgba(255, 193, 7, 0.15); /* إضاءة ذهبية خفيفة ورا الصورة */
+    filter: blur(60px);
+    z-index: 0;
+    border-radius: 50%;
+}
+
+.illustration-box img {
+    position: relative;
+    z-index: 1;
+    max-width: 85%;
+    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.3)); /* ظل احترافي للصورة */
+}
+
+/* أنيميشن الطفو للصور */
+.floating-element {
+    animation: floaty 5s ease-in-out infinite;
+}
+
+/* طفو عكسي للصورة اللي في النص عشان ميكونش كله بيتحرك في نفس الاتجاه */
+.floating-element-reverse {
+    animation: floatyReverse 6s ease-in-out infinite;
+}
+
+@keyframes floaty {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes floatyReverse {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(15px); }
+    100% { transform: translateY(0); }
+}
+
+/* تجاوب مع الموبايل */
+@media (max-width: 991px) {
+    .service-row { margin-bottom: 80px; text-align: center; }
+    .service-title span::after { left: 50%; transform: translateX(-50%); right: auto; width: 80px; }
+    .service-features-list li { text-align: right; } /* للحفاظ على ترتيب القائمة */
+    .service-text-content { padding: 0; }
+}
+/* footer */
+
+/* =========================================
+   تنسيق الفوتر (Footer)
+   ========================================= */
+.maksab-footer {
+    background-color: #0b1c2c; 
+    color: #ffffff;
+    padding-top: 80px;
+    position: relative;
+    border-top: 4px solid var(--hover-gold);
+}
+
+/* === التعديل هنا لضبط الصورة على نفس مستوى العناوين === */
+.footer-logo {
+    max-width: 180px;
+    margin-top: -12px; /* تم رفع اللوجو قليلاً ليتوازى مع النصوص */
+}
+
+.footer-slogan {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.text-gold {
+    color: var(--hover-gold) !important;
+}
+
+/* === التعديل هنا لضبط العناوين === */
+.footer-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+    color: #ffffff;
+    margin-top: 8px; /* تم خفض العنوان قليلاً ليوازي منتصف اللوجو */
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--hover-gold);
+    border-radius: 2px;
+}
+
+/* القوائم والروابط */
+.footer-links, 
+.footer-contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li, 
+.footer-contact-list li {
+    margin-bottom: 15px;
+}
+
+.footer-contact-list li {
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* التعديل هنا لضمان ترتيب الأيقونات بشكل مستقيم */
+.footer-contact-list li i {
+    color: var(--hover-gold);
+    font-size: 1.2rem;
+    margin-left: 12px;
+    width: 20px; 
+    text-align: center;
+}
+
+.footer-links a,
+.footer-contact-list a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.footer-links a i {
+    font-size: 0.8rem;
+    margin-left: 8px;
+    color: var(--hover-gold);
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.3s ease;
+}
+
+/* حركة الروابط عند تمرير الماوس */
+.footer-links a:hover {
+    color: var(--hover-gold);
+    transform: translateX(-8px);
+}
+
+.footer-links a:hover i {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* أيقونات السوشيال ميديا */
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    border-radius: 50%;
+    margin-left: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-links a:hover {
+    background-color: var(--hover-gold);
+    color: #0b1c2c;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+}
+
+/* شريط حقوق النشر السفلي */
+.footer-bottom {
+    background-color: #07121d; 
+    padding: 20px 0;
+    margin-top: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+}
+
+/* الأزرار العائمة */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    transition: 0.3s;
+    text-decoration: none !important;
+}
+
+.floating-whatsapp:hover {
+    transform: scale(1.1);
+    color: white;
+}
+
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 30px; 
+    width: 45px;
+    height: 45px;
+    background-color: var(--hover-gold);
+    color: #0b1c2c;
+    border-radius: 8px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: 0.3s;
+    text-decoration: none !important;
+    opacity: 0; 
+    pointer-events: none;
+}
+
+.scroll-top-btn.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.scroll-top-btn:hover {
+    background-color: #ffffff;
+    color: var(--primary-color);
+    transform: translateY(-5px);
+}
+/* صفحه السوشيال فرعيه */
+
+/* الحاوية الرئيسية */
+.sub-hero-social {
+    position: relative;
+    background-color: var(--primary-color);
+    padding: 150px 0 100px;
+    overflow: hidden;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* --- أنيميشن الأيقونات العائمة في الخلفية --- */
+.floating-social-icons {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1;
+}
+
+.icon-orb {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: floatAround infinite alternate ease-in-out;
+}
+
+/* توزيع الأيقونات في الخلفية كما في الصورة */
+.fb-orb { top: 15%; right: 10%; animation-duration: 8s; font-size: 40px; }
+.ig-orb { top: 60%; left: 8%; animation-duration: 10s; background: rgba(225, 48, 108, 0.1); }
+.tw-orb { top: 20%; left: 15%; animation-duration: 7s; }
+.snap-orb { bottom: 15%; right: 20%; animation-duration: 9s; background: rgba(255, 252, 0, 0.05); }
+
+@keyframes floatAround {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(30px, -40px) rotate(15deg); }
+}
+
+/* --- تنسيق المحتوى --- */
+.relative-z { position: relative; z-index: 5; }
+
+.service-main-title {
+    font-size: 3.5rem;
+    font-weight: 850;
+    margin-bottom: 20px;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+ .tit{
+    color: white;
+}
+.yellow-brush-v2 {
+    display: block;
+    width: 300px;
+    height: 15px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10' preserveAspectRatio='none'%3E%3Cpath d='M0,5 Q50,0 100,5 Q50,10 0,5 Z' fill='%23ffc107'/%3E%3C/svg%3E") no-repeat center;
+    background-size: 100% 100%;
+    margin: 5px auto 0;
+}
+
+.service-main-desc {
+    font-size: 1.2rem;
+    line-height: 2;
+    max-width: 950px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.service-sub-desc {
+    font-size: 1.1rem;
+    color: #ffc107;
+    margin-top: 20px;
+}
+
+/* --- الزر العصري --- */
+.btn-social-cta {
+    background: #007bff;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.4s;
+    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-social-cta:hover {
+    background: #0056b3;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 123, 255, 0.5);
+    color: white;
+}
+
+/* تجاوب الموبايل */
+@media (max-width: 768px) {
+    .service-main-title { font-size: 2.2rem; }
+    .icon-orb { width: 50px; height: 50px; font-size: 20px; }
+}
+
+/* تنسيق قسم الأهمية */
+.importance-section {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.importance-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 35px 25px;
+    border-radius: 20px;
+    text-align: center;
+    height: 100%;
+    transition: 0.4s;
+}
+
+.importance-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-10px);
+    border-color: var(--hover-gold);
+}
+
+.card-icon-circle {
+    width: 70px;
+    height: 70px;
+    background: var(--hover-gold);
+    color: #1b4c74;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin: 0 auto 20px;
+    box-shadow: 0 10px 20px rgba(255, 193, 7, 0.3);
+}
+
+/* تنسيق الـ 6 خطوات */
+.bg-dark-blue { background-color: var(--secone-color); }
+
+.feature-box {
+    position: relative;
+    padding: 40px 30px;
+    background: #1b4c74;
+    border-radius: 15px;
+    border-right: 4px solid var(--hover-gold);
+    height: 100%;
+    transition: 0.3s;
+}
+
+.feature-box:hover {
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.step-number {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.05); /* رقم باهت في الخلفية */
+}
+
+.feature-box h4 {
+    color: var(--hover-gold);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+/* تنسيق قسم العناصر الاستراتيجية */
+/* تنسيق قسم العناصر الاستراتيجية */
+.bg-gradient-blue {
+    background: linear-gradient(180deg, #1b4c74 0%, #0d2335 100%);
+}
+
+.strategic-list {
+    border-right: 2px solid rgba(255, 193, 7, 0.3);
+    padding-right: 30px;
+}
+
+.strat-item {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.strat-item::before {
+    content: '';
+    position: absolute;
+    right: -36px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background: var(--hover-gold);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--hover-gold);
+}
+
+.strat-item h5 { color: var(--hover-gold); font-weight: 700; }
+
+/* تنسيق قسم الفوائد */
+.benefits-wrapper {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 60px 40px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.benefit-check-item {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    margin-bottom: 15px;
+    padding: 15px 25px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.benefit-check-item:hover {
+    background: rgba(255, 193, 7, 0.1);
+    transform: scale(1.02);
+}
+
+.benefit-check-item i {
+    color: var(--hover-gold);
+    font-size: 1.5rem;
+    margin-left: 20px;
+}
+
+.benefit-check-item p { margin: 0; font-size: 1.1rem; font-weight: 600; }
+
+.final-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 900px;
+    margin: 0 auto;
+}
+/* حاوية الخط الزمني */
+.strategic-timeline {
+    position: relative;
+    padding-right: 30px; /* مسافة للخط والنقاط */
+    border-right: 2px solid rgba(255, 193, 7, 0.2); /* الخط الرأسي الباهت */
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* النقطة الذهبية المضيئة */
+.timeline-dot {
+    position: absolute;
+    right: -37px; /* لتقع بالضبط فوق الخط الرأسي */
+    top: 5px;
+    width: 14px;
+    height: 14px;
+    background-color: var(--hover-gold);
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--hover-gold); /* تأثير الإضاءة للنقطة */
+    z-index: 2;
+}
+
+.timeline-item h5 {
+    color: var(--hover-gold);
+    font-weight: 800;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.timeline-item p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* تنسيق الصورة العائمة في الجانب الآخر */
+.strategy-visual-wrapper {
+    position: relative;
+    text-align: center;
+}
+
+.glow-orb-large {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(255, 193, 7, 0.15) 0%, transparent 70%);
+    filter: blur(50px);
+    z-index: 0;
+}
+
+/* السكشن باللون الأساسي */
+/* السكشن باللون الأساسي للموقع */
+.benefits-rtl-section {
+    background-color: var(--primary-color); /* التأكد من استخدام اللون الأساسي */
+    padding: 90px 0;
+    direction: rtl; /* تأكيد اتجاه السطو من اليمين لليسار */
+}
+
+/* الكارت الزجاجي الاحترافي */
+.benefits-glass-card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 35px;
+    padding: 60px 45px;
+}
+
+.benefits-main-title {
+    color: #fff;
+    font-weight: 850;
+    font-size: 2.3rem;
+    margin-bottom: 15px;
+}
+
+.benefits-lead {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+}
+
+/* === ضبط السطر ليكون على اليمين دائماً === */
+.benefit-item-right {
+    display: flex;
+    align-items: center; /* ضبط النص والأيقونة على خط واحد */
+    background: rgba(255, 255, 255, 0.05);
+    padding: 18px 25px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    transition: 0.3s all ease;
+    border-right: 4px solid transparent; /* إضافة خط جانبي يظهر عند الـ Hover */
+}
+
+.benefit-item-right:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(-10px); /* يتحرك لليسار قليلاً عند الوقوف عليه */
+    border-right-color: var(--hover-gold);
+}
+
+/* تنسيق الأيقونة على اليمين */
+.benefit-item-right i {
+    color: var(--hover-gold);
+    font-size: 1.4rem;
+    margin-left: 15px; /* مسافة بين الأيقونة والنص من جهة اليسار (لأننا في RTL) */
+}
+
+.benefit-item-right p {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-align: right; /* تأكيد محاذاة النص لليمين */
+}
+
+/* تنسيق الختام والزرار */
+.footer-note {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.cta-highlight {
+    color: var(--hover-gold);
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 25px;
+}
+
+.btn-primary-gold {
+    background-color: var(--hover-gold);
+    color: var(--primary-color);
+    padding: 14px 45px;
+    border-radius: 12px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn-primary-gold:hover {
+    background-color: #ffffff;
+    color: var(--primary-color);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
