@@ -59,6 +59,45 @@ p, span, a {
     display: none !important;
 }
 
+/* --- التعديل المطلوب: تنسيق الهوفر للقائمة المنسدلة --- */
+
+.dropdown-item {
+    color: #ffffff !important;
+    padding: 12px 25px !important;
+    font-weight: 600 !important;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important; /* حركة انسيابية احترافية */
+    background: transparent !important;
+}
+
+.dropdown-item::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background-color: var(--hover-gold);
+    transition: width 0.3s ease;
+}
+
+/* تأثير الهوفر لما الماوس يجي على الخدمة */
+.dropdown-item:hover {
+    color: var(--hover-gold) !important;
+    background-color: rgba(255, 255, 255, 0.05) !important; /* إضاءة خفيفة جداً للخلفية */
+    padding-right: 35px !important; /* إزاحة النص لإفساح مجال للخط الذهبي */
+}
+
+/* تفعيل الخط الذهبي عند الهوفر */
+.dropdown-item:hover::before {
+    width: 5px; /* سمك الخط الجانبي كما في كروت السوشيال */
+}
+
+/* تنسيق الخط الفاصل بين العناصر إذا وجد */
+.dropdown-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
 .navbar-nav .nav-link.active, 
 .navbar-nav .nav-link:hover {
     color: var(--hover-gold) !important;
@@ -81,9 +120,14 @@ p, span, a {
 }
 
 .dropdown-menu {
-    text-align: right;
-    border-top: 3px solid var(--hover-gold);
-    border-radius: 0 0 8px 8px;
+    background-color: var(--primary-color) !important; /* جعل الخلفية نفس لون الهوية الداكن */
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-top: 4px solid var(--hover-gold) !important; /* الخط الذهبي العلوي المميز */
+    padding: 12px 0 !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5) !important; /* ظل عميق لإعطاء فخامة */
+    min-width: 280px !important;
+    border-radius: 0 0 12px 12px !important;
+    overflow: hidden;
 }
 
 /* Hero Section Settings */
