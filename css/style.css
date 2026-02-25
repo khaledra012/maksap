@@ -1,66 +1,105 @@
 /* الألوان الأساسية */
 :root {
     --primary-color: #1B4C74;
-    --cta-color: #449AD7; 
+    --cta-color: #449AD7;
     --hover-gold: #FFC647;
-    --secone-color:#1A3C61;
+    --secone-color: #1A3C61;
 }
-html, body {
+
+html,
+body {
     overflow-x: hidden;
     width: 100%;
     margin: 0;
     padding: 0;
 }
+
 /* تطبيق الخط على الجسم الرئيسي للموقع */
 body {
     font-family: 'Cairo', sans-serif !important;
 }
 
 /* تخصيص الأوزان للعناوين (اختياري لضمان الشكل) */
-h1, h2, h3, h4, h5, h6, .navbar-brand {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand {
     font-family: 'Cairo', sans-serif;
-    font-weight: 800; /* الوزن العريض اللي ظاهر في الصورة */
+    font-weight: 800;
+    /* الوزن العريض اللي ظاهر في الصورة */
 }
 
-p, span, a {
+p,
+span,
+a {
     font-family: 'Cairo', sans-serif;
-    font-weight: 400; /* الوزن العادي للقراءة */
+    font-weight: 400;
+    /* الوزن العادي للقراءة */
 }
+
 /* الهيدر */
 .navbar {
-    background-color:#20466e !important;
-    padding-top: 10px !important;    
-    padding-bottom: 2px !important; 
-    margin-bottom: 0 !important;   
-    min-height: 60px !important;  
-}
-.main-logo {
-    max-width: 172px;
-    width: 172px;
-    object-fit: contain;
-    max-height: 70px
+    background-color: #20466e !important;
+    padding-top: 10px !important;
+    padding-bottom: 2px !important;
+    margin-bottom: 0 !important;
+    min-height: 60px !important;
 }
 
-.navbar-nav .nav-link, 
-.nav-item, 
+.main-logo {
+    max-width: 210px;
+    width: 210px;
+    object-fit: contain;
+    max-height: 85px
+}
+
+.navbar-nav .nav-link,
+.nav-item,
 .navbar-brand {
     font-family: 'Cairo', sans-serif !important;
-    font-weight: 600; /* هذا الوزن يعطيك نفس ثقل الخط في الصورة */
-    font-size: 16px;  /* الحجم المثالي للهيدر */
+    font-weight: 600;
+    /* هذا الوزن يعطيك نفس ثقل الخط في الصورة */
+    font-size: 16px;
+    /* الحجم المثالي للهيدر */
 }
 
 /* زر "تواصل معنا" في الهيدر */
-.btn-outline-light, .btn-cta {
+.btn-outline-light,
+.btn-cta {
     font-family: 'Cairo', sans-serif !important;
-    font-weight: 700; /* الزر دائماً يفضل يكون أثقل قليلاً */
+    font-weight: 700;
+    /* الزر دائماً يفضل يكون أثقل قليلاً */
 }
-/* تنسيق الروابط */
+
+/* --- Static Wave Divider (أسفل الهيرو) --- */
+.hero-wave-divider {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.hero-wave-divider svg {
+    display: block;
+    width: 100%;
+    height: 100px;
+}
+
+/* التنسيق للروابط */
 .navbar-nav .nav-link {
     color: #ffffff !important;
     margin: 0 12px;
     font-size: 16px;
     transition: 0.3s ease;
 }
+
 .dropdown-toggle::after {
     display: none !important;
 }
@@ -72,7 +111,8 @@ p, span, a {
     padding: 12px 25px !important;
     font-weight: 600 !important;
     position: relative;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important; /* حركة انسيابية احترافية */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    /* حركة انسيابية احترافية */
     background: transparent !important;
 }
 
@@ -90,13 +130,16 @@ p, span, a {
 /* تأثير الهوفر لما الماوس يجي على الخدمة */
 .dropdown-item:hover {
     color: var(--hover-gold) !important;
-    background-color: rgba(255, 255, 255, 0.05) !important; /* إضاءة خفيفة جداً للخلفية */
-    padding-right: 35px !important; /* إزاحة النص لإفساح مجال للخط الذهبي */
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    /* إضاءة خفيفة جداً للخلفية */
+    padding-right: 35px !important;
+    /* إزاحة النص لإفساح مجال للخط الذهبي */
 }
 
 /* تفعيل الخط الذهبي عند الهوفر */
 .dropdown-item:hover::before {
-    width: 5px; /* سمك الخط الجانبي كما في كروت السوشيال */
+    width: 5px;
+    /* سمك الخط الجانبي كما في كروت السوشيال */
 }
 
 /* تنسيق الخط الفاصل بين العناصر إذا وجد */
@@ -104,7 +147,7 @@ p, span, a {
     border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
 }
 
-.navbar-nav .nav-link.active, 
+.navbar-nav .nav-link.active,
 .navbar-nav .nav-link:hover {
     color: var(--hover-gold) !important;
 }
@@ -126,11 +169,14 @@ p, span, a {
 }
 
 .dropdown-menu {
-    background-color: var(--primary-color) !important; /* جعل الخلفية نفس لون الهوية الداكن */
+    background-color: var(--primary-color) !important;
+    /* جعل الخلفية نفس لون الهوية الداكن */
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    border-top: 4px solid var(--hover-gold) !important; /* الخط الذهبي العلوي المميز */
+    border-top: 4px solid var(--hover-gold) !important;
+    /* الخط الذهبي العلوي المميز */
     padding: 12px 0 !important;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5) !important; /* ظل عميق لإعطاء فخامة */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5) !important;
+    /* ظل عميق لإعطاء فخامة */
     min-width: 280px !important;
     border-radius: 0 0 12px 12px !important;
     overflow: hidden;
@@ -139,29 +185,36 @@ p, span, a {
 /* Hero Section Settings */
 
 .hero-section {
-       position: relative;
-    z-index: 10; 
+    position: relative;
+    z-index: 10;
     background-color: var(--primary-color);
-    padding: 0 0 80px 0; 
+    padding: 0 0 140px 0;
     min-height: auto;
     display: flex;
     align-items: center;
-    position: relative; 
-    overflow: hidden;   
+    position: relative;
+    overflow: hidden;
 }
+
 .hero-logo {
     margin-top: 0 !important;
     margin-bottom: 20px !important;
-    z-index: 2; 
+    z-index: 2;
     position: relative;
 }
-.hero-logo, .hero-btns, h1, p {
+
+.hero-logo,
+.hero-btns,
+h1,
+p {
     position: relative;
     z-index: 10;
 }
+
 .hero-section h1 {
     margin-top: 0 !important;
 }
+
 /* === خلفية الأنيميشن الفخمة (تأثير الأورورا) === */
 
 /* تغليف الأشكال عشان ما تخرجش بره السكشن وتعمل مشاكل */
@@ -176,7 +229,8 @@ p, span, a {
 /* السكشن الأساسي */
 .hero-section {
     position: relative;
-    background-color: var(--secone-color); /* اللون الاحتياطي */
+    background-color: var(--secone-color);
+    /* اللون الاحتياطي */
     min-height: 100vh;
     overflow: hidden;
     z-index: 1;
@@ -189,19 +243,23 @@ p, span, a {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 2; /* فوق الخلفية السادة */
+    z-index: 2;
+    /* فوق الخلفية السادة */
 }
 
 /* حاوية الكلام: لازم تكون أعلى من الكل */
 .relative-z {
     position: relative;
-    z-index: 10 !important; 
-    pointer-events: none; /* عشان الماوس يوصل للنقط اللي ورا الكلام ويحركها */
+    z-index: 10 !important;
+    pointer-events: none;
+    /* عشان الماوس يوصل للنقط اللي ورا الكلام ويحركها */
 }
 
 .hero-btns {
-    pointer-events: auto; /* رجع الماوس يشتغل للأزرار بس */
+    pointer-events: auto;
+    /* رجع الماوس يشتغل للأزرار بس */
 }
+
 /* Services Section */
 .services-section {
     background-color: var(--primary-color);
@@ -258,7 +316,7 @@ p, span, a {
     background: rgba(68, 154, 215, 0.1);
 }
 
-.p-hero{
+.p-hero {
     padding-top: 15px;
     line-height: 2.0;
 }
@@ -278,7 +336,7 @@ p, span, a {
     justify-content: center;
     font-size: 30px;
     z-index: 1000;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -307,7 +365,7 @@ p, span, a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 #unique-creative-section .creative-card h3 {
@@ -317,7 +375,7 @@ p, span, a {
 }
 
 #unique-creative-section .creative-card ul {
-    list-style: none; 
+    list-style: none;
     padding: 0;
     margin: 1rem 0 0 0;
 }
@@ -366,8 +424,15 @@ p, span, a {
 }
 
 @keyframes creativeFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
 #unique-creative-section .creative-fade-box {
@@ -385,6 +450,7 @@ p, span, a {
         flex-direction: row !important;
     }
 }
+
 /* =========================================
    تنسيقات القسم المميز
    ========================================= */
@@ -419,12 +485,12 @@ p, span, a {
 }
 
 #unique-creative-section .path-desc {
-    color: #e0e0e0;       
-    font-size: 1.25rem;  
-    line-height: 1.8;     
+    color: #e0e0e0;
+    font-size: 1.25rem;
+    line-height: 1.8;
     font-weight: 400;
-    max-width: 900px;     
-    margin: 0 auto;       
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 #unique-creative-section .img-fluid {
@@ -435,6 +501,7 @@ p, span, a {
     #unique-creative-section .path-title {
         font-size: 1.8rem;
     }
+
     #unique-creative-section .path-desc {
         font-size: 1rem;
         padding: 0 10px;
@@ -446,7 +513,7 @@ p, span, a {
    ========================================= */
 
 #stats-section {
-    background-color: var(--primary-color); 
+    background-color: var(--primary-color);
     font-family: 'Cairo', sans-serif;
     position: relative;
     padding-top: 3rem;
@@ -473,15 +540,23 @@ p, span, a {
 }
 
 #stats-section .floating-tablet {
-    max-width: 50%; 
+    max-width: 50%;
     height: auto;
-    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.4)); /* ظل قوي للواقعية */
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.4));
+    /* ظل قوي للواقعية */
     animation: tabletFloat 5s ease-in-out infinite;
 }
 
 @keyframes tabletFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
 }
 
 #stats-section .stat-card {
@@ -495,13 +570,13 @@ p, span, a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 #stats-section .stat-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
-    border-color: #FDC057; 
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    border-color: #FDC057;
 }
 
 #stats-section .counter-value {
@@ -509,24 +584,34 @@ p, span, a {
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 0.5rem;
-    font-family: sans-serif; 
+    font-family: sans-serif;
 }
 
 #stats-section .stat-label {
-    color: #FDC057; 
+    color: #FDC057;
     font-size: 1.2rem;
     font-weight: 600;
     margin: 0;
 }
 
 @media (max-width: 768px) {
-    #stats-section .stats-title { font-size: 1.8rem; }
-    #stats-section .counter-value { font-size: 2.2rem; }
-    #stats-section .floating-tablet { max-width: 100%; }
+    #stats-section .stats-title {
+        font-size: 1.8rem;
+    }
+
+    #stats-section .counter-value {
+        font-size: 2.2rem;
+    }
+
+    #stats-section .floating-tablet {
+        max-width: 100%;
+    }
 }
+
 /* السكشن الرئيسي */
 .testimonials-section {
-    background-color: #1b4c74; /* اللون الأزرق الأساسي للهيرو */
+    background-color: #1b4c74;
+    /* اللون الأزرق الأساسي للهيرو */
     padding: 80px 0;
     position: relative;
 }
@@ -536,30 +621,39 @@ p, span, a {
     background-color: #0d3a5d;
     border-radius: 15px;
     padding: 40px 30px;
-    
+
     /* === الحل هنا === */
-    width: 100%;       /* لضمان أخذ العرض كامل */
-    display: flex;     /* تفعيل الفليكس داخل الكارت */
-    flex-direction: column; /* ترتيب العناصر عمودياً */
-    justify-content: space-between; /* توزيع المسافات بين النص والنجوم */
-    height: 100%;      /* إجبار الكارت على أخذ طول السلايد (الأطول بينهم) */
+    width: 100%;
+    /* لضمان أخذ العرض كامل */
+    display: flex;
+    /* تفعيل الفليكس داخل الكارت */
+    flex-direction: column;
+    /* ترتيب العناصر عمودياً */
+    justify-content: space-between;
+    /* توزيع المسافات بين النص والنجوم */
+    height: 100%;
+    /* إجبار الكارت على أخذ طول السلايد (الأطول بينهم) */
     /* ================ */
-    
+
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: 0.3s ease;
 }
 
 .testimonials-slider .swiper-slide {
-    height: auto; /* يسمح للسلايد بالتمدد */
-    display: flex; /* يجعل الكارت بداخله يتمدد */
+    height: auto;
+    /* يسمح للسلايد بالتمدد */
+    display: flex;
+    /* يجعل الكارت بداخله يتمدد */
 }
+
 .testimonial-card:hover {
     transform: translateY(-5px);
     border-color: var(--hover-gold);
 }
 
 .testimonial-text {
-    flex-grow: 1; /* يجعل النص يستهلك المساحة الزائدة */
+    flex-grow: 1;
+    /* يجعل النص يستهلك المساحة الزائدة */
     color: #ffffff;
     font-size: 0.95rem;
     line-height: 1.8;
@@ -567,7 +661,8 @@ p, span, a {
 }
 
 .client-name {
-    color: var(--hover-gold); /* اللون الذهبي */
+    color: var(--hover-gold);
+    /* اللون الذهبي */
     font-weight: 700;
     margin-bottom: 20px;
     display: block;
@@ -605,7 +700,8 @@ p, span, a {
 }
 
 .custom-arrow::after {
-    display: none; /* إخفاء سهم سويبر الافتراضي */
+    display: none;
+    /* إخفاء سهم سويبر الافتراضي */
 }
 
 /* تنسيق النقاط (Dots) */
@@ -618,24 +714,53 @@ p, span, a {
     background: var(--hover-gold) !important;
     opacity: 1;
 }
+
 /* استبدل الكلاس باسم الكلاس اللي عندك للأيقونة أو الرابط */
 .whatsapp-float {
-    text-decoration: none !important; /* هذا السطر يشيل أي شرطة تحت الأيقونة */
-    border-bottom: none !important;  /* احتياطاً لو في برواز سفلي */
+    text-decoration: none !important;
+    /* هذا السطر يشيل أي شرطة تحت الأيقونة */
+    border-bottom: none !important;
+    /* احتياطاً لو في برواز سفلي */
     outline: none !important;
 }
 
 /* الأماكن الجديدة للأيقونات الإضافية (5-8) لضمان ظهورها ووضوحها */
-.icon-pos-5 { top: 15%; left: 45%; animation-delay: 1.5s; opacity: 0.6; }
-.icon-pos-6 { bottom: 10%; left: 30%; animation-delay: 2.5s; opacity: 0.6; }
-.icon-pos-7 { top: 45%; right: 8%; animation-delay: 3.5s; opacity: 0.5; }
-.icon-pos-8 { bottom: 35%; left: 5%; animation-delay: 0.5s; opacity: 0.5; }
+.icon-pos-5 {
+    top: 15%;
+    left: 45%;
+    animation-delay: 1.5s;
+    opacity: 0.6;
+}
+
+.icon-pos-6 {
+    bottom: 10%;
+    left: 30%;
+    animation-delay: 2.5s;
+    opacity: 0.6;
+}
+
+.icon-pos-7 {
+    top: 45%;
+    right: 8%;
+    animation-delay: 3.5s;
+    opacity: 0.5;
+}
+
+.icon-pos-8 {
+    bottom: 35%;
+    left: 5%;
+    animation-delay: 0.5s;
+    opacity: 0.5;
+}
 
 /* لزيادة وضوح الأيقونات كلها سِنة كمان */
 .tech-icon-circle {
-    background: rgba(255, 255, 255, 0.1) !important; /* خليت الخلفية أوضح */
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); /* ضفت توهج ذهبي خفيف */
+    background: rgba(255, 255, 255, 0.1) !important;
+    /* خليت الخلفية أوضح */
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+    /* ضفت توهج ذهبي خفيف */
 }
+
 /* صفحه الخدمات */
 
 /* تنسيق السكشن العام */
@@ -644,8 +769,8 @@ p, span, a {
 .service-hero-section {
     position: relative;
     /* مسحنا التدرج وحطينا المتغير بتاعك مباشرة */
-    background-color: var(--primary-color); 
-    padding: 120px 0 100px; 
+    background-color: var(--primary-color);
+    padding: 120px 0 100px;
     overflow: hidden;
     color: #ffffff;
 }
@@ -653,7 +778,10 @@ p, span, a {
 /* خلفية تكنولوجية خفيفة جداً */
 .tech-overlay-bg {
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     /* تقدر تحط صورة الشاشات اللي في الخلفية هنا إذا حبيت */
     background: url('../images/tech-bg.png') center/cover no-repeat;
     opacity: 0.1;
@@ -698,7 +826,7 @@ p, span, a {
 
 /* زر أكتشف المزيد */
 .btn-discover {
-    background-color: #2980b9; 
+    background-color: #2980b9;
     color: #ffffff;
     padding: 12px 35px;
     border-radius: 8px;
@@ -715,7 +843,7 @@ p, span, a {
     background-color: #1a6294;
     color: #ffffff;
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .btn-discover i {
@@ -729,60 +857,79 @@ p, span, a {
 
 /* تجاوب السكشن مع الموبايل */
 @media (max-width: 768px) {
-    .hero-main-title { font-size: 2rem; }
-    .hero-description { font-size: 1rem; }
-    .yellow-brush { width: 180px; }
-    .service-hero-section { padding: 80px 0; }
+    .hero-main-title {
+        font-size: 2rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .yellow-brush {
+        width: 180px;
+    }
+
+    .service-hero-section {
+        padding: 80px 0;
+    }
 }
+
 /* حاوية الأشكال عشان متخرجش برا السكشن */
 .animated-bg-shapes {
     position: absolute;
-    top: 0; 
-    left: 0; 
-    width: 100%; 
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: 0; /* عشان تفضل ورا الكلام */
-    pointer-events: none; /* عشان متمنعش الضغط على الزراير */
+    z-index: 0;
+    /* عشان تفضل ورا الكلام */
+    pointer-events: none;
+    /* عشان متمنعش الضغط على الزراير */
 }
 
 /* التنسيق الأساسي للكرات المضيئة */
 .shape {
     position: absolute;
     border-radius: 50%;
-    filter: blur(90px); /* درجة التمويه عشان تبان كأنها إضاءة مش شكل صلب */
-    opacity: 0.5; /* شفافية خفيفة */
+    filter: blur(90px);
+    /* درجة التمويه عشان تبان كأنها إضاءة مش شكل صلب */
+    opacity: 0.5;
+    /* شفافية خفيفة */
     animation: floatShape infinite alternate ease-in-out;
 }
 
 /* الكرة الأولى: أزرق فاتح (فوق على اليمين) */
 .shape-1 {
-    width: 350px; 
+    width: 350px;
     height: 350px;
-    background: #2980b9; 
-    top: -15%; 
+    background: #2980b9;
+    top: -15%;
     right: -10%;
-    animation-duration: 12s; /* بتتحرك ببطء على مدار 12 ثانية */
+    animation-duration: 12s;
+    /* بتتحرك ببطء على مدار 12 ثانية */
 }
 
 /* الكرة الثانية: اللون الذهبي بتاع مكسب (تحت على الشمال) */
 .shape-2 {
-    width: 300px; 
+    width: 300px;
     height: 300px;
-    background: var(--hover-gold); 
-    bottom: -20%; 
+    background: var(--hover-gold);
+    bottom: -20%;
     left: -10%;
-    opacity: 0.3; /* خلينا الذهبي أهدى شوية */
+    opacity: 0.3;
+    /* خلينا الذهبي أهدى شوية */
     animation-duration: 15s;
-    animation-delay: 2s; /* تبدأ متأخرة شوية عشان الحركة تبان عشوائية */
+    animation-delay: 2s;
+    /* تبدأ متأخرة شوية عشان الحركة تبان عشوائية */
 }
 
 /* الكرة الثالثة: أزرق متوسط (في النص) */
 .shape-3 {
-    width: 250px; 
+    width: 250px;
     height: 250px;
-    background: #3498db; 
-    top: 40%; 
+    background: #3498db;
+    top: 40%;
     left: 40%;
     opacity: 0.2;
     animation-duration: 18s;
@@ -790,11 +937,12 @@ p, span, a {
 
 /* كود حركة الطفو (بتكبر وتصغر وتتحرك من مكانها بشكل ناعم) */
 @keyframes floatShape {
-    0% { 
-        transform: translate(0, 0) scale(1); 
+    0% {
+        transform: translate(0, 0) scale(1);
     }
-    100% { 
-        transform: translate(50px, -50px) scale(1.2); 
+
+    100% {
+        transform: translate(50px, -50px) scale(1.2);
     }
 }
 
@@ -876,7 +1024,8 @@ p, span, a {
 .service-features-list li i {
     color: var(--hover-gold);
     font-size: 1.2rem;
-    margin-left: 10px; /* المسافة بين الأيقونة والنص */
+    margin-left: 10px;
+    /* المسافة بين الأيقونة والنص */
     margin-top: 4px;
 }
 
@@ -896,7 +1045,8 @@ p, span, a {
     transform: translate(-50%, -50%);
     width: 60%;
     height: 60%;
-    background: rgba(255, 193, 7, 0.15); /* إضاءة ذهبية خفيفة ورا الصورة */
+    background: rgba(255, 193, 7, 0.15);
+    /* إضاءة ذهبية خفيفة ورا الصورة */
     filter: blur(60px);
     z-index: 0;
     border-radius: 50%;
@@ -906,7 +1056,8 @@ p, span, a {
     position: relative;
     z-index: 1;
     max-width: 85%;
-    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.3)); /* ظل احترافي للصورة */
+    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.3));
+    /* ظل احترافي للصورة */
 }
 
 /* أنيميشن الطفو للصور */
@@ -920,31 +1071,64 @@ p, span, a {
 }
 
 @keyframes floaty {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0); }
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 @keyframes floatyReverse {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(15px); }
-    100% { transform: translateY(0); }
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 /* تجاوب مع الموبايل */
 @media (max-width: 991px) {
-    .service-row { margin-bottom: 80px; text-align: center; }
-    .service-title span::after { left: 50%; transform: translateX(-50%); right: auto; width: 80px; }
-    .service-features-list li { text-align: right; } /* للحفاظ على ترتيب القائمة */
-    .service-text-content { padding: 0; }
+    .service-row {
+        margin-bottom: 80px;
+        text-align: center;
+    }
+
+    .service-title span::after {
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto;
+        width: 80px;
+    }
+
+    .service-features-list li {
+        text-align: right;
+    }
+
+    /* للحفاظ على ترتيب القائمة */
+    .service-text-content {
+        padding: 0;
+    }
 }
+
 /* footer */
 
 /* =========================================
    تنسيق الفوتر (Footer)
    ========================================= */
 .maksab-footer {
-    background-color: var(--secone-color); 
+    background-color: var(--secone-color);
     color: #ffffff;
     padding-top: 80px;
     position: relative;
@@ -954,7 +1138,8 @@ p, span, a {
 /* === التعديل هنا لضبط الصورة على نفس مستوى العناوين === */
 .footer-logo {
     max-width: 180px;
-    margin-top: -12px; /* تم رفع اللوجو قليلاً ليتوازى مع النصوص */
+    margin-top: -12px;
+    /* تم رفع اللوجو قليلاً ليتوازى مع النصوص */
 }
 
 .footer-slogan {
@@ -975,7 +1160,8 @@ p, span, a {
     position: relative;
     padding-bottom: 10px;
     color: #ffffff;
-    margin-top: 8px; /* تم خفض العنوان قليلاً ليوازي منتصف اللوجو */
+    margin-top: 8px;
+    /* تم خفض العنوان قليلاً ليوازي منتصف اللوجو */
 }
 
 .footer-title::after {
@@ -990,14 +1176,14 @@ p, span, a {
 }
 
 /* القوائم والروابط */
-.footer-links, 
+.footer-links,
 .footer-contact-list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.footer-links li, 
+.footer-links li,
 .footer-contact-list li {
     margin-bottom: 15px;
 }
@@ -1013,7 +1199,7 @@ p, span, a {
     color: var(--hover-gold);
     font-size: 1.2rem;
     margin-left: 12px;
-    width: 20px; 
+    width: 20px;
     text-align: center;
 }
 
@@ -1071,7 +1257,7 @@ p, span, a {
 
 /* شريط حقوق النشر السفلي */
 .footer-bottom {
-    background-color: var(--secone-color); 
+    background-color: var(--secone-color);
     padding: 20px 0;
     margin-top: 50px;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -1110,21 +1296,21 @@ p, span, a {
 .scroll-top-btn {
     position: fixed;
     bottom: 30px;
-    left: 30px; 
+    left: 30px;
     width: 45px;
     height: 45px;
     background-color: var(--hover-gold);
     color: #0b1c2c;
-    border-radius: 8px; 
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     z-index: 1000;
     transition: 0.3s;
     text-decoration: none !important;
-    opacity: 0; 
+    opacity: 0;
     pointer-events: none;
 }
 
@@ -1141,12 +1327,14 @@ p, span, a {
 
 /* === تعديلات الموبايل (لتوسيط محتوى الفوتر بالكامل) === */
 @media (max-width: 767px) {
+
     /* توسيط النصوص في كل الأعمدة */
     .maksab-footer .col-lg-4,
     .maksab-footer .col-lg-3,
     .maksab-footer .footer-brand {
         text-align: center;
-        margin-bottom: 30px; /* مسافة إضافية بين الأقسام في الموبايل */
+        margin-bottom: 30px;
+        /* مسافة إضافية بين الأقسام في الموبايل */
     }
 
     /* توسيط اللوجو */
@@ -1177,9 +1365,10 @@ p, span, a {
         display: flex;
         justify-content: center;
     }
-    
+
     .social-links a {
-        margin: 0 5px; /* توزيع المسافات يمين ويسار الأيقونة */
+        margin: 0 5px;
+        /* توزيع المسافات يمين ويسار الأيقونة */
     }
 }
 
@@ -1216,7 +1405,8 @@ p, span, a {
 
 /* === التوسيط الدقيق والنهائي للفوتر (حل مشكلة المساحة الزائدة) === */
 .footer-links {
-    padding: 0 !important; /* مسح أي مسافة افتراضية للقائمة من اليمين */
+    padding: 0 !important;
+    /* مسح أي مسافة افتراضية للقائمة من اليمين */
     margin: 0 !important;
 }
 
@@ -1236,9 +1426,10 @@ p, span, a {
 /* إخفاء الأيقونة المخفية في الموبايل لأنها تزاحم النص وتلغي التوسيط */
 @media (max-width: 767px) {
     .footer-links a i {
-        display: none !important; 
+        display: none !important;
     }
 }
+
 /* صفحه السوشيال فرعيه */
 
 /* الحاوية الرئيسية */
@@ -1254,7 +1445,10 @@ p, span, a {
 /* --- أنيميشن الأيقونات العائمة في الخلفية --- */
 .floating-social-icons {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: 1;
 }
 
@@ -1275,28 +1469,60 @@ p, span, a {
 }
 
 /* توزيع الأيقونات في الخلفية كما في الصورة */
-.fb-orb { top: 15%; right: 10%; animation-duration: 8s; font-size: 40px; }
-.ig-orb { top: 60%; left: 8%; animation-duration: 10s; background: rgba(225, 48, 108, 0.1); }
-.tw-orb { top: 20%; left: 15%; animation-duration: 7s; }
-.snap-orb { bottom: 15%; right: 20%; animation-duration: 9s; background: rgba(255, 252, 0, 0.05); }
+.fb-orb {
+    top: 15%;
+    right: 10%;
+    animation-duration: 8s;
+    font-size: 40px;
+}
+
+.ig-orb {
+    top: 60%;
+    left: 8%;
+    animation-duration: 10s;
+    background: rgba(225, 48, 108, 0.1);
+}
+
+.tw-orb {
+    top: 20%;
+    left: 15%;
+    animation-duration: 7s;
+}
+
+.snap-orb {
+    bottom: 15%;
+    right: 20%;
+    animation-duration: 9s;
+    background: rgba(255, 252, 0, 0.05);
+}
 
 @keyframes floatAround {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    100% { transform: translate(30px, -40px) rotate(15deg); }
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(30px, -40px) rotate(15deg);
+    }
 }
 
 /* --- تنسيق المحتوى --- */
-.relative-z { position: relative; z-index: 5; }
+.relative-z {
+    position: relative;
+    z-index: 5;
+}
 
 .service-main-title {
     font-size: 3.5rem;
     font-weight: 850;
     margin-bottom: 20px;
-    text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
- .tit{
+
+.tit {
     color: white;
 }
+
 .yellow-brush-v2 {
     display: block;
     width: 300px;
@@ -1343,8 +1569,15 @@ p, span, a {
 
 /* تجاوب الموبايل */
 @media (max-width: 768px) {
-    .service-main-title { font-size: 2.2rem; }
-    .icon-orb { width: 50px; height: 50px; font-size: 20px; }
+    .service-main-title {
+        font-size: 2.2rem;
+    }
+
+    .icon-orb {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
 }
 
 /* تنسيق قسم الأهمية */
@@ -1384,7 +1617,9 @@ p, span, a {
 }
 
 /* تنسيق الـ 6 خطوات */
-.bg-dark-blue { background-color: var(--secone-color); }
+.bg-dark-blue {
+    background-color: var(--secone-color);
+}
 
 .feature-box {
     position: relative;
@@ -1397,7 +1632,7 @@ p, span, a {
 }
 
 .feature-box:hover {
-    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
 .step-number {
@@ -1406,7 +1641,8 @@ p, span, a {
     left: 20px;
     font-size: 2.5rem;
     font-weight: 900;
-    color: rgba(255, 255, 255, 0.05); /* رقم باهت في الخلفية */
+    color: rgba(255, 255, 255, 0.05);
+    /* رقم باهت في الخلفية */
 }
 
 .feature-box h4 {
@@ -1414,6 +1650,7 @@ p, span, a {
     font-weight: 700;
     margin-bottom: 15px;
 }
+
 /* تنسيق قسم العناصر الاستراتيجية */
 /* تنسيق قسم العناصر الاستراتيجية */
 .bg-gradient-blue {
@@ -1442,7 +1679,10 @@ p, span, a {
     box-shadow: 0 0 10px var(--hover-gold);
 }
 
-.strat-item h5 { color: var(--hover-gold); font-weight: 700; }
+.strat-item h5 {
+    color: var(--hover-gold);
+    font-weight: 700;
+}
 
 /* تنسيق قسم الفوائد */
 .benefits-wrapper {
@@ -1473,7 +1713,11 @@ p, span, a {
     margin-left: 20px;
 }
 
-.benefit-check-item p { margin: 0; font-size: 1.1rem; font-weight: 600; }
+.benefit-check-item p {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
 
 .final-text {
     font-size: 1.2rem;
@@ -1482,11 +1726,14 @@ p, span, a {
     max-width: 900px;
     margin: 0 auto;
 }
+
 /* حاوية الخط الزمني */
 .strategic-timeline {
     position: relative;
-    padding-right: 30px; /* مسافة للخط والنقاط */
-    border-right: 2px solid rgba(255, 193, 7, 0.2); /* الخط الرأسي الباهت */
+    padding-right: 30px;
+    /* مسافة للخط والنقاط */
+    border-right: 2px solid rgba(255, 193, 7, 0.2);
+    /* الخط الرأسي الباهت */
 }
 
 .timeline-item {
@@ -1501,13 +1748,15 @@ p, span, a {
 /* النقطة الذهبية المضيئة */
 .timeline-dot {
     position: absolute;
-    right: -37px; /* لتقع بالضبط فوق الخط الرأسي */
+    right: -37px;
+    /* لتقع بالضبط فوق الخط الرأسي */
     top: 5px;
     width: 14px;
     height: 14px;
     background-color: var(--hover-gold);
     border-radius: 50%;
-    box-shadow: 0 0 15px var(--hover-gold); /* تأثير الإضاءة للنقطة */
+    box-shadow: 0 0 15px var(--hover-gold);
+    /* تأثير الإضاءة للنقطة */
     z-index: 2;
 }
 
@@ -1545,9 +1794,11 @@ p, span, a {
 /* السكشن باللون الأساسي */
 /* السكشن باللون الأساسي للموقع */
 .benefits-rtl-section {
-    background-color: var(--primary-color); /* التأكد من استخدام اللون الأساسي */
+    background-color: var(--primary-color);
+    /* التأكد من استخدام اللون الأساسي */
     padding: 90px 0;
-    direction: rtl; /* تأكيد اتجاه السطو من اليمين لليسار */
+    direction: rtl;
+    /* تأكيد اتجاه السطو من اليمين لليسار */
 }
 
 /* الكارت الزجاجي الاحترافي */
@@ -1574,18 +1825,21 @@ p, span, a {
 /* === ضبط السطر ليكون على اليمين دائماً === */
 .benefit-item-right {
     display: flex;
-    align-items: center; /* ضبط النص والأيقونة على خط واحد */
+    align-items: center;
+    /* ضبط النص والأيقونة على خط واحد */
     background: rgba(255, 255, 255, 0.05);
     padding: 18px 25px;
     border-radius: 15px;
     margin-bottom: 15px;
     transition: 0.3s all ease;
-    border-right: 4px solid transparent; /* إضافة خط جانبي يظهر عند الـ Hover */
+    border-right: 4px solid transparent;
+    /* إضافة خط جانبي يظهر عند الـ Hover */
 }
 
 .benefit-item-right:hover {
     background: rgba(255, 255, 255, 0.08);
-    transform: translateX(-10px); /* يتحرك لليسار قليلاً عند الوقوف عليه */
+    transform: translateX(-10px);
+    /* يتحرك لليسار قليلاً عند الوقوف عليه */
     border-right-color: var(--hover-gold);
 }
 
@@ -1593,7 +1847,8 @@ p, span, a {
 .benefit-item-right i {
     color: var(--hover-gold);
     font-size: 1.4rem;
-    margin-left: 15px; /* مسافة بين الأيقونة والنص من جهة اليسار (لأننا في RTL) */
+    margin-left: 15px;
+    /* مسافة بين الأيقونة والنص من جهة اليسار (لأننا في RTL) */
 }
 
 .benefit-item-right p {
@@ -1601,7 +1856,8 @@ p, span, a {
     color: #ffffff;
     font-size: 1.15rem;
     font-weight: 600;
-    text-align: right; /* تأكيد محاذاة النص لليمين */
+    text-align: right;
+    /* تأكيد محاذاة النص لليمين */
 }
 
 /* تنسيق الختام والزرار */
@@ -1634,7 +1890,7 @@ p, span, a {
 .btn-primary-gold:hover {
     background-color: #ffffff;
     color: var(--primary-color);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* حاوية الشريط الأساسية - هنا هنشغل الحركة */
@@ -1642,7 +1898,8 @@ p, span, a {
     display: flex;
     width: max-content;
     animation: scroll-rtl 35s linear infinite;
-    will-change: transform; /* أمر للمتصفح إنه يفضل مركز مع العنصر ده */
+    will-change: transform;
+    /* أمر للمتصفح إنه يفضل مركز مع العنصر ده */
 }
 
 /* توقف الحركة لما الماوس ييجي عليها */
@@ -1655,12 +1912,13 @@ p, span, a {
     display: flex;
     align-items: center;
     gap: 2rem;
-    padding-left: 2rem; /* عشان اللحام بين المجموعتين يكون نفس مقاس الـ gap */
+    padding-left: 2rem;
+    /* عشان اللحام بين المجموعتين يكون نفس مقاس الـ gap */
     flex-shrink: 0;
-    
+
     /* السطرين دول هم الحل السحري لمشكلة اختفاء الصور */
-    transform: translateZ(0); 
-    -webkit-transform: translateZ(0); 
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
 }
 
 /* بوكس اللوجو الزجاجي (زي ما هو بدون تغيير) */
@@ -1670,16 +1928,20 @@ p, span, a {
     display: flex;
     align-items: center;
     justify-content: center;
-   background: rgba(255, 255, 255, 0.04); /* كانت 0.02 - بقت أوضح */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* كانت 0.05 - بقت أوضح */
+    background: rgba(255, 255, 255, 0.04);
+    /* كانت 0.02 - بقت أوضح */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* كانت 0.05 - بقت أوضح */
     border-radius: 15px;
     transition: all 0.4s ease;
     padding: 15px;
 }
 
 .partner-logo-box:hover {
-background: rgba(255, 255, 255, 0.08); /* إضاءة البوكس بتزيد */
-    border-color: rgba(212, 175, 55, 0.6); /* الإطار الذهبي أوضح */
+    background: rgba(255, 255, 255, 0.08);
+    /* إضاءة البوكس بتزيد */
+    border-color: rgba(212, 175, 55, 0.6);
+    /* الإطار الذهبي أوضح */
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
@@ -1687,26 +1949,35 @@ background: rgba(255, 255, 255, 0.08); /* إضاءة البوكس بتزيد */
 .partner-logo-box img {
     max-width: 100%;
     max-height: 100%;
-filter: grayscale(60%) opacity(0.85);
+    filter: grayscale(60%) opacity(0.85);
     transition: all 0.4s ease;
 }
 
 .partner-logo-box:hover img {
-filter: grayscale(0%) opacity(1) brightness(1.1);}
+    filter: grayscale(0%) opacity(1) brightness(1.1);
+}
 
 /* الأنيميشن المظبوط للأب (استخدمنا translate3d عشان نجبر كارت الشاشة يشتغل) */
 @keyframes scroll-rtl {
-    0% { transform: translate3d(0, 0, 0); }
-    100% { transform: translate3d(50%, 0, 0); } /* 50% لأنهم مجموعتين بالضبط */
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(50%, 0, 0);
+    }
+
+    /* 50% لأنهم مجموعتين بالضبط */
 }
 
 .service-hero-section {
     position: relative;
-    background-color: var(--primary-color); 
-    padding: 120px 0 100px; 
+    background-color: var(--primary-color);
+    padding: 120px 0 100px;
     overflow: hidden;
     color: #ffffff;
-    min-height: 80vh; /* تأكد من وجود طول كافي للرسم */
+    min-height: 80vh;
+    /* تأكد من وجود طول كافي للرسم */
     display: flex;
     align-items: center;
 }
@@ -1714,10 +1985,15 @@ filter: grayscale(0%) opacity(1) brightness(1.1);}
 /* الكلاس بتاعك بعد تعديله لخدمة الأنيميشن الجديد */
 .tech-overlay-bg {
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    opacity: 1; /* رفعنا الشفافية عشان الجزيئات تبان */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    /* رفعنا الشفافية عشان الجزيئات تبان */
     z-index: 1;
-    pointer-events: none; /* عشان ميغطيش على الزراير */
+    pointer-events: none;
+    /* عشان ميغطيش على الزراير */
 }
 
 .relative-z {
@@ -1728,7 +2004,7 @@ filter: grayscale(0%) opacity(1) brightness(1.1);}
 .hero-section {
     /* رفعنا الدرجة لـ 0.82 عشان الصورة تبقى هادية جداً والكلام يبقى بطل المشهد */
     background: linear-gradient(rgba(21, 42, 63, 0.82), rgba(21, 42, 63, 0.82)), url('../images/gemini.png');
-    
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
