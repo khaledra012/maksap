@@ -1726,14 +1726,17 @@ filter: grayscale(0%) opacity(1) brightness(1.1);}
 }
 
 .hero-section {
-
-background: linear-gradient(rgba(21, 42, 63, 0.60), rgba(21, 42, 63, 0.60)), url('../images/gemini.png');    
-    background-size: cover;    
-    background-position: center; 
-    background-repeat: no-repeat;
+    /* رفعنا الدرجة لـ 0.82 عشان الصورة تبقى هادية جداً والكلام يبقى بطل المشهد */
+    background: linear-gradient(rgba(21, 42, 63, 0.82), rgba(21, 42, 63, 0.82)), url('../images/gemini.png');
     
-    min-height: 85vh; 
-    position: relative; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 85vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-section .relative-z {
