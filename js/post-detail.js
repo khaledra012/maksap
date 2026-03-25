@@ -23,7 +23,26 @@ function toAbsoluteUrl(url) {
 }
 
 function getCanonicalUrl(slug) {
-  return `${SITE_ORIGIN}/single-post?slug=${encodeURIComponent(slug)}`;
+  return `${SITE_ORIGIN}/blog/${encodeURIComponent(slug)}`;
+}
+
+function getSlugFromLocation() {
+  const path = window.location.pathname
+    .replace(/\/+$/, "")
+    .split("/")
+    .filter(Boolean);
+
+  const blogIndex = path.findIndex((segment) => segment === "blog");
+  if (blogIndex !== -1) {
+    const slugParts = path.slice(blogIndex + 1);
+    if (slugParts.length) {
+      return decodeURIComponent(slugParts.join("/"));
+    }
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  const querySlug = params.get("slug");
+  return querySlug || "";
 }
 
 function setMetaByName(name, content) {
@@ -232,11 +251,10 @@ function renderPost(post) {
 }
 
 async function init() {
-  const params = new URLSearchParams(window.location.search);
-  const slug = params.get("slug");
+  const slug = getSlugFromLocation();
 
   if (!slug) {
-    window.location.href = "blog";
+    window.location.href = "/blog";
     return;
   }
 
