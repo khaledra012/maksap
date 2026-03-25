@@ -8,7 +8,7 @@ async function init() {
   const params = new URLSearchParams(window.location.search);
   const slug = params.get("slug");
 
-  if (!slug) return (window.location.href = "blog.html");
+  if (!slug) return (window.location.href = "blog");
 
   const QUERY = encodeURIComponent(`*[_type == "post" && slug.current == "${slug}"][0]{
         title,

@@ -365,7 +365,7 @@ async function loadBlogPosts() {
                     <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 20px;">
                         ${post.excerpt ? post.excerpt.substring(0, 80) + "..." : ""}
                     </p>
-                    <a href="single-post.html?slug=${post.slug}" class="read-more-btn">
+                    <a href="single-post?slug=${post.slug}" class="read-more-btn">
                          <i class="fas fa-chevron-down" style="font-size: 0.8rem;"></i> تصفح المقال
                     </a>
                 </div>
